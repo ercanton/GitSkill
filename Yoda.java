@@ -16,7 +16,7 @@ public class Yoda {
         // move them to yodafy the phrase!
         input = yodafy(input);
 
-        System.out.println("Here is the yodafied phrase: ");
+        System.out.println("\nHere is the yodafied phrase: ");
         System.out.print(input);
         in.close();
     }
@@ -28,14 +28,14 @@ public class Yoda {
         while (input.indexOf(".") != -1)
         {
             int periodLocation = input.indexOf(".");
-            System.out.println(periodLocation);
+            //System.out.println(periodLocation);
             String inputPart = input.substring(0, periodLocation);
-            System.out.println("InputPart: " + inputPart);
+            //System.out.println("InputPart: " + inputPart);
             if (periodLocation == input.length() -1)
                 input = input.substring(periodLocation + 1, input.length());
             else
                 input = input.substring(periodLocation + 2, input.length());
-            System.out.println("Input: " + input);
+            //System.out.println("Input: " + input);
             String yodafied = inputPart;
             for (String phrase : yodaPhrases)
             {
@@ -43,7 +43,7 @@ public class Yoda {
                 {
                     int phraseLength = phrase.length();
                     //System.out.println("found a phrase!");
-                    System.out.println(inputPart.substring(phraseLength + 1, inputPart.length()));
+                    //System.out.println(inputPart.substring(phraseLength + 1, inputPart.length()));
                     String firstPart = inputPart.substring(0, inputPart.indexOf(phrase));
                     yodafied = firstPart + inputPart.substring(phraseLength + 1, inputPart.length()) + " " + phrase + ". ";
                     yodafied = yodafied.substring(0, 1).toUpperCase() + yodafied.substring(1);
